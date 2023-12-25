@@ -7,7 +7,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     paths:
-      - 'azoumed/GHA_A_RG_T/*.tf'
+      - './GHA_A_RG_T/*.tf'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,17 +35,17 @@ jobs:
       - name: 'Terraform init'
         id: init
         run: |
-          cd azoumed/GHA_A_RG_T
+          cd ./GHA_A_RG_T
           terraform init          
 
       - name: 'Terraform plan'
         id: plan
         run: |
-          cd azoumed/GHA_A_RG_T
+          cd ./GHA_A_RG_T
           terraform plan
                     
       - name: 'Terraform apply'
         id: apply
         run: |
-          cd azoumed/GHA_A_RG_T
+          cd ./GHA_A_RG_T
           terraform apply -auto-approve          
