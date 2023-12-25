@@ -40,11 +40,9 @@ jobs:
       - name: 'Terraform plan'
         id: plan
         run: |
-          cd ./GHA_A_RG_T
           terraform plan
                     
       - name: 'Terraform apply'
         id: apply
         run: |
-          cd ./GHA_A_RG_T
           terraform apply -auto-approve          
